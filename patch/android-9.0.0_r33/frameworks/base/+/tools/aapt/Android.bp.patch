@@ -1,0 +1,82 @@
+diff --git a/tools/aapt/Android.bp b/tools/aapt/Android.bp
+index f3673973077..8dd831527f5 100644
+--- a/tools/aapt/Android.bp
++++ b/tools/aapt/Android.bp
+@@ -35,6 +35,11 @@ cc_defaults {
+     ],
+     group_static_libs: true,
+ 
++    //
++    // Creates an executable that statically links to its dependencies (e.g. bionic).
++    //
++    static_executable: true,
++
+     cflags: [
+         "-Wall",
+         "-Werror",
+@@ -44,6 +49,13 @@ cc_defaults {
+         windows: {
+             enabled: true,
+         },
++
++        //
++        // Build for Android devices.
++        //
++        android: {
++            enabled: true,
++        },
+     },
+ 
+     // This tool is prebuilt if we're doing an app-only build.
+@@ -60,13 +72,23 @@ cc_defaults {
+ // ==========================================================
+ // Build the host static library: libaapt
+ // ==========================================================
+-cc_library_host_static {
++cc_library {
+     name: "libaapt",
+     defaults: ["aapt_defaults"],
++    host_supported: true,
+     target: {
+         darwin: {
+             cflags: ["-D_DARWIN_UNLIMITED_STREAMS"],
+         },
++
++        //        
++        // Build as a static library targetting Android devices.
++        //
++        android: {
++            static: {
++                enabled: true,
++            },
++	}
+     },
+     cflags: [
+         "-Wno-format-y2k",
+@@ -103,18 +125,23 @@ cc_library_host_static {
+ // ==========================================================
+ // Build the host executable: aapt
+ // ==========================================================
+-cc_binary_host {
++cc_binary {
+     name: "aapt",
+     defaults: ["aapt_defaults"],
+     srcs: ["Main.cpp"],
+     use_version_lib: true,
+-    static_libs: ["libaapt"],
++    host_supported: true,
++
++    //
++    //  Create an uber-static library that has all of its dependencies packaged with it.
++    //
++    whole_static_libs: ["libaapt"],
+ }
+ 
+ // ==========================================================
+ // Build the host tests: libaapt_tests
+ // ==========================================================
+-cc_test_host {
++cc_test {
+     name: "libaapt_tests",
+     defaults: ["aapt_defaults"],
+     srcs: [
