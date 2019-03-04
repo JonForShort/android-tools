@@ -2,7 +2,9 @@
 
 ## What is this?
 
-This project is aimed at providing popular Android tools (e.g. aapt) that can be run directly on Android devices.  These tools are already packaged in the Android SDK (https://developer.android.com/studio) but for ABIs unuseable on most Android devices (e.g. x86 and x86_64).  Note that this project is still a work-in-progress. Currently, it only provides the Android Asset Packaging Tool (AAPT) for ARM-v7a, ARM-v8a, X86 and X86-64 ABIs. 
+This project is aimed at providing popular Android tools (e.g. aapt) that can be run directly on Android devices.  These tools are already packaged in the Android SDK (https://developer.android.com/studio) but for ABIs unuseable on most Android devices (e.g. x86 and x86_64).
+
+Note that this project is still a work-in-progress. Currently, it only provides the Android Asset Packaging Tool (AAPT) for ARM-v7a, ARM-v8a, X86 and X86-64 ABIs. 
 
 ## Why is this useful?
 
