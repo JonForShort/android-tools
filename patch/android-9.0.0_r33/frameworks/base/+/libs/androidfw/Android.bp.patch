@@ -1,0 +1,24 @@
+diff --git a/libs/androidfw/Android.bp b/libs/androidfw/Android.bp
+index 0c32fdf5baf..8eaa85a0ba0 100644
+--- a/libs/androidfw/Android.bp
++++ b/libs/androidfw/Android.bp
+@@ -25,6 +25,10 @@ cc_defaults {
+             // The Windows compiler warns incorrectly for value initialization with {}.
+             cppflags: ["-Wno-missing-field-initializers"],
+         },
++	android: {
++            cflags: ["-DSTATIC_ANDROIDFW_FOR_TOOLS"],
++	    enabled: true,
++	},
+         host: {
+             cflags: ["-DSTATIC_ANDROIDFW_FOR_TOOLS"],
+         },
+@@ -82,7 +86,7 @@ cc_library {
+                 "libz",
+             ],
+             static: {
+-                enabled: false,
++                enabled: true,
+             },
+         },
+         host: {
