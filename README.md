@@ -2,13 +2,13 @@
 
 ## What is this?
 
-This project is aimed at providing popular Android tools (e.g. aapt) that can be run directly on Android devices.  These tools are already packaged in the Android SDK (https://developer.android.com/studio), but for ABIs that are unuseable on most Android devices (e.g. x86 or x86_64).
+This project is aimed at providing popular Android tools (e.g. aapt, aapt2, etc.) that can be run directly on Android devices.  Although these tools are already packaged in the Android SDK (https://developer.android.com/studio), the SDK only provides them for ABIs targetting the PC (e.g. x86 or x86_64).
 
-Currently, this project only provides the Android Asset Packaging Tool (AAPT) for ARM-v7a, ARM-v8a, X86 and X86-64 ABIs.  The plan is to provide other useful tools such as AAPT2 and dexdump.
+For a complete list of the Android tools provided by this project, please see the build folder (https://github.com/thejunkjon/android-tools/tree/master/build/android-9.0.0_r33).
 
 ## Why is this useful?
 
-I am currently writing an Android app that requires me to analyze an app's APK on the device.  Although there are already projects out there that allow you to do this off-device -- most notably apk tool (https://ibotpeaches.github.io/Apktool/), there isn't a project (as far as I know) that allows you to do this directly on-device.
+I created this project because I needed to analyze APKs on the device as part of my Android app.  Although there are already projects out there that allow you to do this off-device -- most notably apk tool (https://ibotpeaches.github.io/Apktool/), there isn't a project (as far as I know) that allows you to do this directly on-device.
 
 ## How was this done?
 
@@ -24,4 +24,4 @@ patch/<branch_name>/<path_to_patched_file>
 
 ## How can I help?
 
-The best way to help is to submit patches for the build scripts.
+The best way to help is to find an Android tool you think is valuable to include in this project, and then submit a build script patch for it.
