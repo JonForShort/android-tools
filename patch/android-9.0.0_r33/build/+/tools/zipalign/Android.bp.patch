@@ -1,0 +1,22 @@
+diff --git a/tools/zipalign/Android.bp b/tools/zipalign/Android.bp
+index 8e6196d29..2457ca8e8 100644
+--- a/tools/zipalign/Android.bp
++++ b/tools/zipalign/Android.bp
+@@ -4,7 +4,7 @@
+ // Zip alignment tool
+ //
+ 
+-cc_binary_host {
++cc_binary {
+     name: "zipalign",
+ 
+     srcs: [
+@@ -32,5 +32,8 @@ cc_binary_host {
+             host_ldlibs: ["-lpthread"],
+             enabled: true,
+         },
++	 android: {
++            enabled: true,
++        },
+     },
+ }
