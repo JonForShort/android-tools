@@ -1,0 +1,10 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+container: thejunkjon/android-tools:latest
+
+steps:
+- script: printenv
