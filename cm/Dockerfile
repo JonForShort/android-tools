@@ -14,3 +14,12 @@ RUN apt-get update && \
 #
 ADD https://commondatastorage.googleapis.com/git-repo-downloads/repo /usr/local/bin/
 RUN chmod 755 /usr/local/bin/repo
+
+#
+# Add scripts
+#
+COPY release.sh /usr/local/bin/release.sh
+RUN chmod 755 /usr/local/bin/release.sh
+
+COPY build.sh /usr/local/bin/build.sh
+RUN chmod 755 /usr/local/bin/build.sh
