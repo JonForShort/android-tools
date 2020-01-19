@@ -1,12 +1,12 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 #
 # Install dependencies
 #
 RUN apt-get update && \
-    apt-get install -y bc bison bsdmainutils build-essential curl flex g++-multilib gcc-multilib git gnupg gperf lib32ncurses5-dev \
-        lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2-utils lzop sudo openjdk-8-jdk \
-        pngcrush schedtool xsltproc zip zlib1g-dev graphviz && \
+    apt-get install -y bc bison bsdmainutils build-essential curl flex g++-multilib gcc-multilib git gnupg gperf \
+        lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libwxgtk3.0-dev libxml2-utils lzop \
+        sudo openjdk-8-jdk pngcrush schedtool xsltproc zip zlib1g-dev graphviz && \
     apt -y autoclean && apt -y autoremove && apt clean
 
 #
