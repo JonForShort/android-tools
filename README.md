@@ -29,3 +29,4 @@ The best way to help is to find an Android tool you think is valuable to include
 * zipalign (https://developer.android.com/studio/command-line/zipalign)
 * apkanalyzer (https://developer.android.com/studio/command-line/apkanalyzer)
 * apksigner (https://developer.android.com/studio/command-line/apksigner)
+* aidl (https://developer.android.com/guide/components/aidl)
