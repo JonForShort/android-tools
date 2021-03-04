@@ -26,7 +26,5 @@ patch/<branch_name>/<path_to_patched_file>
 
 The best way to help is to find an Android tool you think is valuable to include in this project, and then submit a build script patch for it.  Here is a list of tools that is currently on my to-do list.
 
-* zipalign (https://developer.android.com/studio/command-line/zipalign)
 * apkanalyzer (https://developer.android.com/studio/command-line/apkanalyzer)
 * apksigner (https://developer.android.com/studio/command-line/apksigner)
-* aidl (https://developer.android.com/guide/components/aidl)
