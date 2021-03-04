@@ -1,0 +1,31 @@
+36a37,66
+> 
+> cc_binary {
+>     name: "zipalign_android",
+> 
+>     srcs: [
+>         "ZipAlign.cpp",
+>         "ZipEntry.cpp",
+>         "ZipFile.cpp",
+>     ],
+> 
+>     cflags: ["-Wall", "-Werror"],
+> 
+>     // NOTE: Do not add any shared_libs dependencies because they will break the
+>     // static_sdk_tools target.
+>     static_libs: [
+>         "libutils",
+>         "libcutils",
+>         "liblog",
+>         "libziparchive",
+>         "libz",
+>         "libbase",
+>         "libzopfli",
+>     ],
+> 
+>     target: {
+>         android: {
+>             enabled: true,
+>         },
+>     },
+> }
