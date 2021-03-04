@@ -1,0 +1,17 @@
+93a94,109
+> cc_binary {
+>     name: "aidl_android",
+>     defaults: ["aidl_defaults"],
+>     srcs: ["main.cpp"],
+>     static_libs: [
+>         "libaidl-common",
+>         "libbase",
+>         "liblog",
+>     ],
+>     target: {
+>         android: {
+> 	    enabled: true
+> 	}
+>     }
+> }
+> 
